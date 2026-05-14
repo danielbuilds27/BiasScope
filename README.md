@@ -1,4 +1,4 @@
-# BiasAnalyzer
+# BiasScope
 
 A full-stack web application for detecting gender bias in text, based on the research of Gaucher, Friesen & Kay (2011). The tool combines rule-based word matching with Claude AI for contextual analysis, providing quantitative scores and qualitative insights.
 
