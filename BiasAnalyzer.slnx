@@ -1,0 +1,7 @@
+<Solution>
+  <Project Path="BiasAnalyzer.API/BiasAnalyzer.API.csproj" />
+  <Project Path="BiasAnalyzer.Core/BiasAnalyzer.Core.csproj" />
+  <Project Path="BiasAnalyzer.Data/BiasAnalyzer.Data.csproj" />
+  <Project Path="BiasAnalyzer.Services/BiasAnalyzer.Services.csproj" />
+  <Project Path="BiasAnalyzer.Tests/BiasAnalyzer.Tests.csproj" />
+</Solution>

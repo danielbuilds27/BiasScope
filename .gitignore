@@ -1,0 +1,20 @@
+# .NET
+bin/
+obj/
+*.user
+*.suo
+.vs/
+appsettings.Development.json
+
+# EF Migrations - keep migrations but ignore local db
+*.db
+
+# React
+bias-analyzer-web/node_modules/
+bias-analyzer-web/build/
+bias-analyzer-web/.env
+bias-analyzer-web/.env.local
+
+# OS
+.DS_Store
+Thumbs.db
