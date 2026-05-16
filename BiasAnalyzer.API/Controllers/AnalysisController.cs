@@ -10,11 +10,13 @@ public class AnalysisController : ControllerBase
 {
     private readonly BiasAnalysisOrchestrator _orchestrator;
     private readonly IAnalysisRepository _repository;
+    private readonly UrlScraperService _scraper;
 
-    public AnalysisController(BiasAnalysisOrchestrator orchestrator, IAnalysisRepository repository)
+    public AnalysisController(BiasAnalysisOrchestrator orchestrator, IAnalysisRepository repository, UrlScraperService scraper)
     {
         _orchestrator = orchestrator;
         _repository = repository;
+        _scraper = scraper;
     }
 
     [HttpPost]
@@ -30,6 +32,16 @@ public class AnalysisController : ControllerBase
     {
         var analyses = await _repository.GetAllAsync();
         return Ok(analyses);
+    }
+
+    [HttpPost("url")]
+    public async Task<IActionResult> AnalyzeUrl([FromBody] string url)
+    {
+        var text = await _scraper.ExtractTextAsync(url);
+        if (string.IsNullOrWhiteSpace(text)) return BadRequest("Nu s-a putut extrage text din URL.");
+        var result = await _orchestrator.AnalyzeAsync(text);
+        await _repository.AddAsync(result);
+        return Ok(result);
     }
 
     [HttpGet("{id}")]
