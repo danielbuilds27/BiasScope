@@ -28,7 +28,8 @@ public class BiasAnalysisOrchestrator
             AnalyzedAt = DateTime.UtcNow,
             MasculineScore = masculineScore,
             FeminineScore = feminineScore,
-            ClaudeSummary = claudeSummary
+            ClaudeSummary = claudeSummary,
+            WordOccurences = occurences
         };
     }
 }

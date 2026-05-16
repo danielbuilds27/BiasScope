@@ -10,4 +10,5 @@ public class TextAnalysis
     public double MasculineScore {get; set; }
     public double FeminineScore {get; set; }
     public string? ClaudeSummary {get; set; } 
+    public List<WordOccurence> WordOccurences {get; set; } = new();
 }
